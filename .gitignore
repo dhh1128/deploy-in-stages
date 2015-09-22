@@ -1,3 +1,10 @@
+# dis-specific artifacts
+done
+failed
+pending
+stopped
+targets.json
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

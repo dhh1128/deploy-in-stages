@@ -292,7 +292,7 @@ class job(json_wrapper):
             value = 0
         elif self.is_stalled():
             value = None
-            for host in hosts:
+            for host in self.hosts:
                 retry_info = job.retries.get(host, None)
                 if self.host_should_be_queued(host):
                     if retry_info:
