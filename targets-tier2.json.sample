@@ -1,0 +1,38 @@
+{
+  "doc": [
+    "Defines a set of targets we can deploy to. Each target maps a name to a",
+    "dict of one or more host entries. Host entries in turn map a remote host",
+    "name or ip to a cascade spec that tells where else the remote host should",
+    "forward the data, and how soon the remote host is eligible to receive",
+    "data or a child job, after the data and parent job are visible here. If",
+    "no cascade spec is present for a given host, then the host is terminal,",
+    "and can receive its data immediately.",
+    "\n",
+    "A cascade spec may contain either or both of the following pieces of info,",
+    "delimited by spaces in either order: a dis target that's defined in the",
+    "remote host's targets.json (where to forward), and the number of minutes",
+    "to delay before forwarding to the remote host."
+  ],
+
+  "targets": {
+    "all": {
+      "10.202.8.131": null,
+      "10.202.8.132": "30",
+      "10.202.8.133": "40",
+      "10.202.8.134": "50",
+      "10.202.8.135": "60",
+      "10.202.8.136": "70",
+      "10.202.8.137": "80"
+    },
+    "quick": {
+      "10.202.8.131": null,
+      "10.202.8.132": null,
+      "10.202.8.133": null,
+      "10.202.8.134": null,
+      "10.202.8.135": null,
+      "10.202.8.136": null,
+      "10.202.8.137": null
+    }
+  }
+}
+

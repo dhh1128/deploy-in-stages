@@ -1,0 +1,26 @@
+{
+  "retries": {}, 
+  "target": "drtr@research-stage-drtr1:~/deploy-in-stages", 
+  "failed": [], 
+  "events": [
+    "On zufa at Tue Sep 15 12:09:17 2015: Status is now done.", 
+    "On zufa at Tue Sep 15 12:09:17 2015: No delegation necessary; drtr@research-stage-drtr1 is a terminal distribution point.", 
+    "On zufa at Tue Sep 15 12:09:17 2015: Successfully pushed data to drtr@research-stage-drtr1:~/deploy-in-stages."
+  ], 
+  "sources": [
+    {
+      "path": "/home/daniel/deploy-in-stages/targets.json", 
+      "lastmod_time": 1442258491, 
+      "size": 957
+    }
+  ], 
+  "done": [
+    "drtr@research-stage-drtr1"
+  ], 
+  "queue_time": 1442340553.316091, 
+  "next_check_time": 0,
+  "last_check_time": 0, 
+  "bucket": "done",
+  "uuid": "dec2a3445bd411e5a4b390b11c92dea7", 
+  "pending": []
+}

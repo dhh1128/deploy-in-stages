@@ -1,0 +1,39 @@
+{
+  "retries": {}, 
+  "target": "jhall:/tmp", 
+  "failed": [], 
+  "events": [
+    "On zufa at Tue Sep 15 22:20:02 2015: No results yet from drtr@research-stage-drtr1.", 
+    "On zufa at Tue Sep 15 22:15:09 2015: No results yet from drtr@drtr1.dc.", 
+    "On zufa at Tue Sep 15 22:15:02 2015: No results yet from drtr@research-stage-drtr1.", 
+    "On zufa at Tue Sep 15 22:10:10 2015: No results yet from drtr@drtr1.dc.", 
+    "On zufa at Tue Sep 15 22:10:02 2015: No results yet from drtr@research-stage-drtr1.", 
+    "On zufa at Tue Sep 15 22:05:10 2015: No results yet from drtr@drtr1.dc.", 
+    "On zufa at Tue Sep 15 22:05:02 2015: No results yet from drtr@research-stage-drtr1.", 
+    "On zufa at Tue Sep 15 22:00:10 2015: No results yet from drtr@drtr1.dc.", 
+    "On zufa at Tue Sep 15 22:00:02 2015: No results yet from drtr@research-stage-drtr1.", 
+    "On zufa at Tue Sep 15 21:54:17 2015: Status is now pending.", 
+    "On zufa at Tue Sep 15 21:54:17 2015: Queued remote job on drtr@drtr1.dc.", 
+    "On zufa at Tue Sep 15 21:54:15 2015: Successfully pushed data to drtr@drtr1.dc:/tmp.", 
+    "On zufa at Tue Sep 15 21:54:11 2015: Queued remote job on drtr@research-stage-drtr1.", 
+    "On zufa at Tue Sep 15 21:54:11 2015: Successfully pushed data to drtr@research-stage-drtr1:/tmp."
+  ], 
+  "sources": [
+    {
+      "path": "/tmp/snapshot1.png", 
+      "lastmod_time": 1441063112, 
+      "size": 146757
+    }
+  ], 
+  "stopped": [], 
+  "queue_time": 1442375643.185164, 
+  "done": [], 
+  "next_check_time": 1442431561.782779,
+  "last_check_time": 0,
+  "bucket": "pending", 
+  "uuid": "91f3bd3a5c2611e5a18c90b11c92dea7", 
+  "pending": [
+    "drtr@research-stage-drtr1", 
+    "drtr@drtr1.dc"
+  ]
+}

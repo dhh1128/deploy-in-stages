@@ -1,0 +1,32 @@
+{
+  "doc": [
+    "Defines a set of targets we can deploy to. Each target consists of a host",
+    "name or ip, plus an optional cascade spec that tells how to queue one or",
+    "more dis jobs to stage additional delivery later. If no cascade spec is",
+    "present for a given host, then the host is terminal.",
+    "\n",
+    "A simple cascade spec consists of a dis target that's defined on the remote",
+    "host, followed by a space, followed by the number of minutes to wait after",
+    "the initial job is submitted before beginning work on the secondary dis",
+    "job. Cascade specs may include more than one such pair, delimited by",
+    "semicolons."
+  ],
+    
+  "targets": {
+    "all": {
+      "drtr@drtr1.dc": "all 60",
+      "drtr@research-stage-drtr1": "all 60",
+      "drtr@drtr1.uk": "all 120",
+      "drtr@drtr1.hk": "all 120",
+      "drtr@drtr1.se": "all 120"
+    },
+    "jhall": {
+      "drtr@drtr1.dc": "all 60",
+      "drtr@research-stage-drtr1": "all 60"
+    },
+    "stage": {
+      "drtr@research-stage-drtr1": null,
+      "drtr@research-stage-drtr2": null
+    }
+  }
+}
