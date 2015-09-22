@@ -18,3 +18,5 @@ wanted to know what work I had completed in the overall deployment process at an
 ### Sample Usage
 * `dis help` will provide a syntax dump
 * `dis queue /my/folder/ /and/my/file mytarget:~/` -- pushes a folder (recursive) and a file to ~/ on `mytarget`, where `mytarget` is defined in targets.json, or is a simple hostname
+* `dis status` will check on progress
+* `dis stop` will abandon work in progress
