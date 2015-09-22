@@ -48,10 +48,6 @@ dis stop <job_id>
     canceled. Job id can be any convenient prefix, instead of the full
     value.
 
-dis update <target>
-
-    Push latest version of this script to specified target.
-    
 ''' % make_target_list()
     if (len(args) != 1 or not help_pat.match(args[0])):
         complain('Error in cmdline syntax.\n\n' + txt)
@@ -516,6 +512,7 @@ def queue(sources, rsync_spec):
         job_path = buckets.path_for_job(buckets.queued, j.uuid)
         j.save(job_path) 
         print('Job %s is queued.' % j.short_id())
+        more(False)
         
     except SystemExit:
         raise
