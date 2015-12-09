@@ -8,7 +8,10 @@ dis -- deploy in stages
 
 Use rsync to push data out to a deployment hierarchy, with delays between
 each stage in the hierarchy to allow us to detect and react to possible
-problems.
+problems. You must have passwordless ssh working between this node and
+any hostnames this node will contact, and you may want a cron job that
+runs "dis more" every once in a while, to keep jobs moving through the
+pipeline.
 
 dis queue <src> [<src>...] <target:path>
 
@@ -303,6 +306,7 @@ class job(json_wrapper):
     def move_to(self, bucket):
         if self.get_bucket() == bucket:
             return
+        print('Moving job %s to %s from %s' % (self.short_id(), bucket, self.get_bucket()))
         
         new_folder = buckets.folder_for(bucket)
         if not os.path.isdir(new_folder):
@@ -454,6 +458,7 @@ class job(json_wrapper):
     def save(self, path=None):
         if path is None:
             path = self._path
+        print('Saving job %s to %s.' % (self.short_id(), path))
         with open(path, 'w') as f:
             json.dump(self.raw, f, indent=2, cls=custom_encoder)
             self.set_path(path)
@@ -678,7 +683,7 @@ def rsync(src, tgt=None, error_filter=None):
                 except:
                     changes.append(traceback.format_exc())
                 if changes:
-                    raise Exception('%s has changed since it was queued (%s).' % ', '.join(changes))
+                    raise Exception('%s has changed since it was queued (%s).' % (item.path, ', '.join(changes)))
                 src_path = item.path
                 
         if os.path.isdir(src_path):
@@ -916,9 +921,10 @@ def flush(which_buckets=None):
         which_buckets = buckets.all
     for bucket in which_buckets:
         folder = buckets.folder_for(bucket)
-        for item in os.listdir(folder):
-            os.remove(os.path.join(folder, item))
-        print('Flushed %s' % bucket)
+        if os.path.isdir(folder):
+            for item in os.listdir(folder):
+                os.remove(os.path.join(folder, item))
+            print('Flushed %s' % bucket)
 
 
 def stop(id_fragment, second_try=False):
@@ -995,6 +1001,8 @@ if __name__ == '__main__':
     if args:
         verb = args[0]
         args = args[1:]
+    else:
+        verb = 'help'
     if globals().has_key(verb):
         func = globals()[verb]
         func(*args)
